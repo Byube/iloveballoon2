@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Main from '@/views/common/common.vue'
-import Test from '@/views/common/test.vue'
+import Main from '@/views/common/CallTable.vue'
+import Test from '@/views/common/test.vue' 
+import Dashboard from '@/views/common/Dashboard.vue'
+import Table from '@/views/common/CallTable.vue'
+import ChartDemo from '@/views/common/ChartDemo.vue'
 
 const routes = [
   {
@@ -12,6 +15,21 @@ const routes = [
     path: '/test',
     name: 'test',
     component: Test
+  },
+  {
+    path: '/table',
+    name: 'table',
+    component: Table
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard
+  },
+  {
+    path: '/chart',
+    name: 'Chart',
+    component: ChartDemo
   },
   {
     path: '/about',

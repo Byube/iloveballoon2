@@ -1,7 +1,7 @@
 export default{
     namespaced:true,
     state:{
-        menuNm: '종목조회',
+        menuNm: '대시보드',
     },
     mutations:{
         CHANGE_NOW_MENU_NAME(state, payload){

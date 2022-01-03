@@ -1,17 +1,12 @@
 {
     "menu": [
         {
-            "label": "종목",
+            "label": "일반",
             "items": [
                 {
-                    "label": "종목관리",
+                    "label": "대시보드",
                     "icon": "pi pi-fw pi-th-large",
-                    "items": [
-                        {
-                            "label": "종목조회",
-                            "to":"/test"
-                        }
-                    ]
+                    "to": "/"
                 }
             ]
         },
@@ -27,10 +22,12 @@
                             "to": "/"
                         },
                         {
-                            "label": "입금목록"
+                            "label": "입금목록",
+                            "to":"/test"
                         },
                         {
-                            "label": "매출목록"
+                            "label": "ChartDemo",
+                            "to": "/chart"
                         },
                         {
                             "label": "월렛 트랜잭션 조회"
@@ -42,7 +39,8 @@
                     "icon": "pi pi-cog",
                     "items": [
                         {
-                            "label": "입금계좌관리"
+                            "label": "입금계좌관리",
+                            "to": "/table"
                         }
                     ]
                 }

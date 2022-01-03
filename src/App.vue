@@ -3,8 +3,9 @@
     <Header />
     <div class="layout-main-container">
       <div class="layout-main">
-        <Main />
+        <router-view />
       </div>
+      <Footer />
     </div>
 
     <transition name="layout-mask">
@@ -13,18 +14,19 @@
         v-if="mobileMenuActive"
       ></div>
     </transition>
-
   </div>
 </template>
 <script>
-import Main from "@/views/main/Main.vue";
+// import Main from "@/views/main/Main.vue";
 import Header from "@/views/header/Header.vue";
+import Footer from "@/views/footer/Footer.vue";
 import { computed } from "vue";
 import { activeClassName } from "@/composables/sideNav";
 export default {
   components: {
-    Main,
+    // Main,
     Header,
+    Footer,
   },
   setup() {
     const {
@@ -36,10 +38,10 @@ export default {
       mobileMenuActive,
       changeMobileMenuState,
       checkMenuOnclick,
-      changeMenuOnclick
+      changeMenuOnclick,
     } = activeClassName();
     const onWrapperClick = () => {
-      if(!checkMenuOnclick.value){
+      if (!checkMenuOnclick.value) {
         changeOverMenuState(false);
         changeMobileState(false);
       }
@@ -69,11 +71,14 @@ export default {
       onWrapperClick,
       containerClass,
       showMain,
-      mobileMenuActive
+      mobileMenuActive,
     };
   },
 };
 </script>
 
-<style>
+
+<style lang="scss">
+@import './App.scss';
 </style>
+
