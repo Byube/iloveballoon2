@@ -4,6 +4,9 @@ import Test from '@/views/common/test.vue'
 import Dashboard from '@/views/common/Dashboard.vue'
 import Table from '@/views/common/CallTable.vue'
 import ChartDemo from '@/views/common/ChartDemo.vue'
+import Dialog from '@/views/common/DialogTest.vue'
+import CallMD from '@/views/common/CallMD.vue'
+
 
 const routes = [
   {
@@ -30,6 +33,16 @@ const routes = [
     path: '/chart',
     name: 'Chart',
     component: ChartDemo
+  },
+  {
+    path: '/dialog',
+    name: 'Dialog',
+    component: Dialog
+  },
+  {
+    path: '/member_detail',
+    name: 'MemberDetail',
+    component: CallMD
   },
   {
     path: '/about',

@@ -6,7 +6,7 @@
 <script>
 import TableData from "@/data/Member.json";
 import MemSamData from "@/data/MemSamData.json";
-import Table from "./Table.vue";
+import Table from "@/views/common/table/Table.vue";
 export default {
   components: {
     Table,

@@ -7,9 +7,11 @@
 <script>
 import SideNav from "@/views/main/sideNav/SideNav.vue";
 import AppTopbar from "@/views/main/sideNav/AppTopbar.vue";
-import SideNavData from "@/data/SideNavData.json";
-import { activeClassName } from "@/composables/sideNav";
-import { menuOnClick } from "@/composables/menuCheck";
+// import SideNavData from "@/data/SideNavData.json";
+import SideDB from "@/api/sideNavDB.js";
+import { activeClassName } from "@/service/sideNavService";
+import { menuOnClick } from "@/service/menuCheckService";
+import { ref } from '@vue/reactivity';
 export default {
   components: {
     SideNav,
@@ -60,10 +62,19 @@ export default {
         changeMobileState(false);
       }
     };
-
+    const SideN = ref([]);
+    const SideNavonDB = async () => {
+      let res;
+            //비동기 처리 끝나는 지점 체크 await
+      res = await SideDB.get('menu');
+      SideN.value = res.data;
+    };
+    SideNavonDB();
+    
     return {
       onMenuItemClick,
-      menu: SideNavData.menu,
+      // menu: SideNavData.menu,
+      menu:SideN,
       containerClass,
       onMenuToggle,
       onSidebarClick,

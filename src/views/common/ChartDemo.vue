@@ -40,12 +40,14 @@ import PolarAreaChart from './chart/PolarAreaChart.vue';
 import BarChart from './chart/BarChart.vue';
 import DoughNutChart from './chart/DoughNutChart.vue';
 import RadarChart from './chart/RadarChart.vue';
-import PieChartData from '@/data/PieChartData.json'
+// import PieChartData from '@/data/PieChartData.json'
 import LineChartData from '@/data/LineChartData.json'
 import PolarAreaChartData from '@/data/PolarAreaChartData.json'
 import BarChartData from '@/data/BarChartData.json'
 import DoughNutChartData from '@/data/DoughNutChartData.json'
 import RadarChartData from '@/data/RadarChartData.json'
+import axios from '@/api/axios';
+import { ref } from '@vue/reactivity';
 export default {
   components:{
     PieChart,
@@ -56,6 +58,19 @@ export default {
     RadarChart
   },
   setup() {
+    const PieChartData = ref(null);
+    const GetData = async () => {
+      let res;
+      try {
+        res = await axios.get('comments/1');
+        PieChartData.value = res.data;
+        console.log(PieChartData.value);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    GetData();
+    console.log(DoughNutChartData);
     return {
       PieChartData,
       LineChartData,

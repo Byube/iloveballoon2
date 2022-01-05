@@ -6,7 +6,8 @@
                 {
                     "label": "대시보드",
                     "icon": "pi pi-fw pi-th-large",
-                    "to": "/"
+                    "key":"11111",
+                    "to": {"name": "Home"}
                 }
             ]
         },
@@ -18,8 +19,9 @@
                     "icon": "pi pi-fw pi-chart-line",
                     "items": [
                         {
-                            "label": "입금/매출대사",
-                            "to": "/"
+                            "label": "Table",
+                            "to": "/",
+                            "visible":true
                         },
                         {
                             "label": "입금목록",

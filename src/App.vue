@@ -21,7 +21,7 @@
 import Header from "@/views/header/Header.vue";
 import Footer from "@/views/footer/Footer.vue";
 import { computed } from "vue";
-import { activeClassName } from "@/composables/sideNav";
+import { activeClassName } from "@/service/sideNavService";
 export default {
   components: {
     // Main,

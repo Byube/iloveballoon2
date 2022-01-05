@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import CountryService from '../service/CountryService';
+import CountryService from '@/service/CountryService';
 export default {
 	data() {
 		return {
